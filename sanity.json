@@ -1,11 +1,11 @@
 {
   "root": true,
+  "api": {
+    "projectId": "i747gtty",
+    "dataset": "test"
+  },
   "project": {
     "name": "nordslettveien-cms"
-  },
-  "api": {
-    "projectId": "vm4knbjd",
-    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
@@ -33,6 +33,5 @@
       "name": "part:@sanity/desk-tool/structure",
       "path": "./deskStructure.js"
     }
-
   ]
 }

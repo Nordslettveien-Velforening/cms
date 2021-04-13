@@ -1,8 +1,6 @@
-import  richTextEditor from "./fields/blockContent";
-
 export default {
-    name: "contentPage",
-    title: "Innholdsside",
+    name: "documentCategory",
+    title: "Dokumenttyper",
     type: "document",
     fields: [
         {
@@ -18,13 +16,19 @@ export default {
             options: {
                 source: "title",
                 maxLength: 96
-            }
-        },
-        {
-            title: "Innhold",
-            name: "body",
-            type: "blockContent",
+            },
             validation: (Rule) => Rule.required().error("Feltet er påkrevd"),
         },
+        {
+            title: "Kort beskrivelse",
+            name: "body",
+            type: "blockContent"
+        },
+        {
+            title: "Dokumenter",
+            name: "documents",
+            type: "array",
+            of: [{ type: "documentContent" }]
+        }
     ]
 }

@@ -4,10 +4,13 @@ import createSchema from 'part:@sanity/base/schema-creator'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
-import siteSettings from "./siteSettings";
-import author from "./author";
-import rootPage from "./root-page";
-import contentPage from "./content-page";
+import rootPage from "./documents/rootPage";
+import documentCategory from "./documents/documentCategory";
+import news from "./documents/news";
+import siteSettings from "./documents/siteSettings";
+import contentSection from "./objects/contentSection";
+import author from "./objects/author";
+import documentContent from "./objects/documentContent"
 import blockContent from "./fields/blockContent";
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -17,10 +20,13 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-      blockContent,
-      siteSettings,
-      author,
       rootPage,
-      contentPage
+      documentCategory,
+      documentContent,
+      news,
+      siteSettings,
+      contentSection,
+      author,
+      blockContent
   ])
 })

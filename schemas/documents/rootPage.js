@@ -1,4 +1,4 @@
-import richTextEditor from "./fields/blockContent";
+import richTextEditor from "../fields/blockContent";
 
 export default {
     name: "rootPage",
@@ -18,7 +18,8 @@ export default {
             options: {
                 source: "title",
                 maxLength: 96
-            }
+            },
+            validation: (Rule) => Rule.required().error("Feltet er påkrevd"),
         },
         {
             title: "Innhold",
@@ -28,11 +29,10 @@ export default {
         },
         {
             name: "subpages",
-            title: "Undersider",
+            title: "Innholdsseksjoner",
             type: "array",
             of: [{
-                type: "reference",
-                to: { type: "contentPage" }
+                type: "contentSection"
             }]
         }
     ]

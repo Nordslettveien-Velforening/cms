@@ -1,5 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdSettings, MdMenu, MdLibraryBooks } from "react-icons/md"
+import { MdSettings, MdMenu, CgFileDocument, BsInfoCircle } from "react-icons/all"
 
 export default () =>
     S.list()
@@ -12,10 +12,17 @@ export default () =>
                     S.documentTypeList("rootPage").title("Hovedsider i toppmenyen")
                 ),
             S.listItem()
-                .title("Innholdssider")
-                .icon(MdLibraryBooks)
+                .title("Dokumenter")
+                .icon(CgFileDocument)
                 .child(
-                    S.documentTypeList("contentPage").title("Innholdssider")
+                    S.documentTypeList("documentCategory")
+                        .title("Dokumentsamlinger")
+                ),
+            S.listItem()
+                .title("Styret informerer")
+                .icon(BsInfoCircle)
+                .child(
+                    S.documentTypeList("news")
                 ),
             S.divider(),
             S.listItem()
