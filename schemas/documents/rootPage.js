@@ -1,4 +1,5 @@
 import richTextEditor from "../fields/blockContent";
+import IconInput from "../../components/IconInput";
 
 export default {
     name: "rootPage",
@@ -20,6 +21,12 @@ export default {
                 maxLength: 96
             },
             validation: (Rule) => Rule.required().error("Feltet er påkrevd"),
+        },
+        {
+            title: "Menyikon",
+            name: "icon",
+            type: "string",
+            inputComponent: IconInput
         },
         {
             title: "Innhold",
