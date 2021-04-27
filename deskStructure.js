@@ -1,33 +1,49 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdSettings, MdMenu, CgFileDocument, BsInfoCircle } from "react-icons/all"
+import { BiCog, BiArchive, BiBookmark, BiBookmarks, BiMenu, BiInfoCircle     } from "react-icons/all"
 
 export default () =>
     S.list()
         .title('Innhold')
         .items([
             S.listItem()
-                .title("Hovedmeny")
-                .icon(MdMenu)
+                .title("Hovedsider")
+                .icon(BiBookmark)
                 .child(
-                    S.documentTypeList("rootPage").title("Hovedsider i toppmenyen")
+                    S.documentTypeList("rootPage")
+                        .title("Hovedsider")
+                ),
+            S.listItem()
+                .title("Undersider")
+                .icon(BiBookmarks)
+                .child(
+                    S.documentTypeList("contentSection")
+                        .title("Undersider")
                 ),
             S.listItem()
                 .title("Dokumenter")
-                .icon(CgFileDocument)
+                .icon(BiArchive)
                 .child(
                     S.documentTypeList("documentCategory")
                         .title("Dokumentsamlinger")
                 ),
             S.listItem()
                 .title("Styret informerer")
-                .icon(BsInfoCircle)
+                .icon(BiInfoCircle)
                 .child(
                     S.documentTypeList("news")
                 ),
             S.divider(),
             S.listItem()
+                .title("Menystruktur")
+                .icon(BiMenu)
+                .child(
+                    S.editor()
+                        .schemaType('mainMenu')
+                        .documentId('mainMenu')
+                ),
+            S.listItem()
                 .title('Innstillinger')
-                .icon(MdSettings)
+                .icon(BiCog)
                 .child(
                     S.editor()
                         .schemaType('siteSettings')

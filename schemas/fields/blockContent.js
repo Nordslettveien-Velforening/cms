@@ -33,10 +33,10 @@ export default {
                             {
                                 name: "reference",
                                 type: "reference",
-                                title: "Side",
+                                title: "Innholdselement",
                                 to: [
                                     {type: "rootPage"},
-                                    {type: "contentPage"}
+                                    {type: "contentSection"}
                                 ]
                             }
                         ]
@@ -63,7 +63,9 @@ export default {
             }
         },
         {
-            type: "image"
-        }
+            name: "blockImage",
+            title: "Bilde",
+            type: "blockImage",
+        },
     ]
 }

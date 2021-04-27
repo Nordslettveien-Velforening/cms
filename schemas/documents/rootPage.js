@@ -1,6 +1,3 @@
-import richTextEditor from "../fields/blockContent";
-import IconInput from "../../components/IconInput";
-
 export default {
     name: "rootPage",
     title: "Hovedside",
@@ -23,12 +20,6 @@ export default {
             validation: (Rule) => Rule.required().error("Feltet er påkrevd"),
         },
         {
-            title: "Menyikon",
-            name: "icon",
-            type: "string",
-            inputComponent: IconInput
-        },
-        {
             title: "Innhold",
             name: "body",
             type: "blockContent",
@@ -36,11 +27,17 @@ export default {
         },
         {
             name: "subpages",
-            title: "Innholdsseksjoner",
+            title: "Undersider",
             type: "array",
-            of: [{
-                type: "contentSection"
-            }]
+            description: `For å legge til nye undersider må du først publisere den i "Undersider" i menyen, deretter legge til siden her.`,
+            of: [
+                {
+                    type: "reference",
+                    title: "Velg underside",
+                    to: { type: "contentSection" }
+                }
+            ]
         }
     ]
 }
+

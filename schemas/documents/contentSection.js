@@ -1,9 +1,9 @@
-import  richTextEditor from "../fields/blockContent";
 
 export default {
     name: "contentSection",
-    title: "Innholdsseksjon",
-    type: "object",
+    title: "Innholdselement",
+    description: "Innholdselementer kan brukes som toppnivåsider i hovedmenyen, eller underelementer til en toppnivåside.",
+    type: "document",
     fields: [
         {
             name: "title",
